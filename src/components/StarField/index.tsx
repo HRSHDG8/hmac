@@ -1,5 +1,5 @@
 import StarfieldAnimation from './starfield'
-import React, {ElementType, FC, ReactElement} from "react";
+import React, {FC, ReactElement} from "react";
 import {Paper, styled} from "@mui/material";
 
 const Content = styled(Paper)({

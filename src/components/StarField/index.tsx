@@ -3,21 +3,23 @@ import React, {FC, ReactElement} from "react";
 import {Paper, styled} from "@mui/material";
 
 const Content = styled(Paper)({
-    width: 'calc(100vw - 20px)',
-    height: 'calc(100vh - 30px)',
-    padding: '15px 10px',
-    background: `linear-gradient(45deg, #501a5c, #200042)`,
-    borderRadius: '0px'
+    width: '100vw',
+    height: '100vh',
+    borderRadius: '0px',
+    background: 'transparent',
+    overflowY: 'auto',
+    position: 'absolute'
 })
 
-export const StarField:FC<{ children: ReactElement }> = ({children})=>{
+export const StarField: FC<{ children: ReactElement }> = ({children}) => {
     return <div
         style={{
             backgroundSize: 'stretch',
             height: '100vh',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            background: `linear-gradient(45deg, #501a5c, #200042)`,
         }}
     >
         <StarfieldAnimation
@@ -28,7 +30,7 @@ export const StarField:FC<{ children: ReactElement }> = ({children})=>{
             }}
         />
         <Content>
-        {children}
+            {children}
         </Content>
     </div>
 }

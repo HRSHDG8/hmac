@@ -1,18 +1,8 @@
-import React, {
-    createContext,
-    FC,
-    ReactElement,
-    useCallback,
-    useContext,
-    useState,
-} from 'react'
-import {
-    createTheme,
-    ThemeProvider as MuiThemeProvider,
-    useMediaQuery,
-} from '@mui/material'
+import React, {createContext, FC, ReactElement, useCallback, useContext, useState,} from 'react'
+import {createTheme, ThemeProvider as MuiThemeProvider, useMediaQuery,} from '@mui/material'
 
 export type Mode = 'light' | 'dark'
+
 export interface IThemeContext {
     isLight: boolean
     toggleTheme: () => void
@@ -20,7 +10,8 @@ export interface IThemeContext {
 
 const ThemeContext = createContext<IThemeContext>({
     isLight: true,
-    toggleTheme: () => {},
+    toggleTheme: () => {
+    },
 })
 
 export const useTheme = () => useContext(ThemeContext)
@@ -37,7 +28,7 @@ const dark = createTheme({
     },
 })
 
-export const ThemeProvider: FC<{ children: ReactElement }> = ({ children }) => {
+export const ThemeProvider: FC<{ children: ReactElement }> = ({children}) => {
     const baseTheme = useMediaQuery('(prefers-color-scheme: dark)')
         ? 'dark'
         : 'light'

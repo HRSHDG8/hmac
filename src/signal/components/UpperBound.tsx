@@ -7,7 +7,7 @@ import {IntField, Margin, Spaced, withSVGTheme} from './index'
 
 export const UpperBound = withSVGTheme(() => {
     const [b, setB] = useState(30)
-    const [snr, setSnr] = useState(1000)
+    const [snr, setSnr] = useState(30)
 
     const snrDbToSnr = (snr: number) => {
         return Math.pow(10, parseFloat((snr / 10) + ''))

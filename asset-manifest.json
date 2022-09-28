@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hmac/static/css/main.e6c13ad2.css",
+    "main.js": "/hmac/static/js/main.178bda89.js",
+    "static/js/787.7f38c9b3.chunk.js": "/hmac/static/js/787.7f38c9b3.chunk.js",
+    "index.html": "/hmac/index.html",
+    "main.e6c13ad2.css.map": "/hmac/static/css/main.e6c13ad2.css.map",
+    "main.178bda89.js.map": "/hmac/static/js/main.178bda89.js.map",
+    "787.7f38c9b3.chunk.js.map": "/hmac/static/js/787.7f38c9b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.178bda89.js"
+  ]
+}

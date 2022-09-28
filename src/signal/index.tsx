@@ -4,15 +4,15 @@ import React, {FC} from "react";
 import {Button} from "@mui/material";
 
 export const signalRoutes: RouteObject[] = [{
-    path: '#/hmac/network-fundamentals/rx-signal-strength',
+    path: '#/network-fundamentals/rx-signal-strength',
     element: <RxSignalStrength/>,
     id: 'Rx Signal Strength'
 }, {
-    path: '#/hmac/network-fundamentals/theoretical-upper-bound',
+    path: '#/network-fundamentals/theoretical-upper-bound',
     element: <UpperBound/>,
     id: 'Theoretical Upper Bound'
 }, {
-    path: '#/hmac/network-fundamentals/packet-error-rate',
+    path: '#/network-fundamentals/packet-error-rate',
     element: <PacketErrorRate/>,
     id: 'Packet Error Rate'
 }]

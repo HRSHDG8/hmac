@@ -19,12 +19,12 @@ function App() {
             <>
                 {/*<RouterProvider router={router}/>*/}
                 <Routes>
-                    <Route path={'/hmac'} element={<CS696/>}>
-                        <Route path={'/hmac/network-fundamentals'} element={<Signal/>}>
-                            <Route path={'/hmac/network-fundamentals/rx-signal-strength'}
+                    <Route path={'/'} element={<CS696/>}>
+                        <Route path={'/network-fundamentals'} element={<Signal/>}>
+                            <Route path={'/network-fundamentals/rx-signal-strength'}
                                    element={<RxSignalStrength/>}/>
-                            <Route path={'/hmac/network-fundamentals/theoretical-upper-bound'} element={<UpperBound/>}/>
-                            <Route path={'/hmac/network-fundamentals/packet-error-rate'} element={<PacketErrorRate/>}/>
+                            <Route path={'/network-fundamentals/theoretical-upper-bound'} element={<UpperBound/>}/>
+                            <Route path={'/network-fundamentals/packet-error-rate'} element={<PacketErrorRate/>}/>
                         </Route>
                     </Route>
                 </Routes>

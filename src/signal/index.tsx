@@ -17,7 +17,7 @@ export const signalRoutes: RouteObject[] = [{
     id: 'Packet Error Rate'
 }]
 
-export const Signal:FC = () => {
+export const Signal: FC = () => {
     return <div>
         {signalRoutes.map(({path, id}) => <Button key={path} href={path}>{id}</Button>)}
         <Outlet/>

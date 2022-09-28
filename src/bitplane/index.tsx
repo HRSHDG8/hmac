@@ -1,7 +1,7 @@
 import {Button} from "@mui/material";
 import React, {useState} from "react";
 
-export const BitPlane = () =>{
+export const BitPlane = () => {
 
     const [img, setImage] = useState();
 
@@ -9,7 +9,7 @@ export const BitPlane = () =>{
         <Button
             variant="contained"
             component="label"
-            onChange={e=>{
+            onChange={e => {
                 //@ts-ignore
                 setImage(URL.createObjectURL(e.target.files[0]))
             }}
@@ -21,6 +21,6 @@ export const BitPlane = () =>{
                 hidden
             />
         </Button>
-        {img && <img src = {img}/>}
+        {img && <img src={img}/>}
     </div>
 }

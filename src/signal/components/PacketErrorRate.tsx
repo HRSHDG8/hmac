@@ -102,7 +102,7 @@ export const PacketErrorRate = withSVGTheme(() => {
                     {`${Math.pow(1 - Math.pow(1 - ber, l * 8), mMax + 1)}`}
                 </Spaced>
                 <Spaced>
-                    {`${((Math.pow(1 - Math.pow(1 - ber, l * 8), mMax + 1)*100).toFixed(4))} %`}
+                    {`${((Math.pow(1 - Math.pow(1 - ber, l * 8), mMax + 1) * 100).toFixed(4))} %`}
                 </Spaced>
             </EquationOptions>
         </Margin>
@@ -112,8 +112,8 @@ export const PacketErrorRate = withSVGTheme(() => {
         <Margin style={{maxWidth: 600}}>
             <MuiThemeProvider theme={light}>
                 <Paper>
-                {/* @ts-ignore */}
-                <Line options={options} data={chartData} type={'line'}/>
+                    {/* @ts-ignore */}
+                    <Line options={options} data={chartData} type={'line'}/>
                 </Paper>
             </MuiThemeProvider>
         </Margin>

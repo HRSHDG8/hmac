@@ -10,11 +10,11 @@ export const Margin = styled('div')({
     margin: 10
 })
 
-const NumberField = (parser: (string: string, radix?: number)=> number): FC<{ value: number, onChange: Dispatch<SetStateAction<number>>, label: string }> => ({
-                                                                                                                  onChange,
-                                                                                                                  value,
-                                                                                                                  label
-                                                                                                              }) => {
+const NumberField = (parser: (string: string, radix?: number) => number): FC<{ value: number, onChange: Dispatch<SetStateAction<number>>, label: string }> => ({
+                                                                                                                                                                   onChange,
+                                                                                                                                                                   value,
+                                                                                                                                                                   label
+                                                                                                                                                               }) => {
     const setNumberValue = (val: string, setter: Dispatch<SetStateAction<number>>) => {
         try {
             const num = parser(val?.trim())

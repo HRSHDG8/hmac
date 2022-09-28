@@ -13,7 +13,7 @@ const Content = styled(Paper)({
 })
 
 export const StarField: FC<{ children: ReactElement }> = ({children}) => {
-    const { isLight } = useTheme()
+    const {isLight} = useTheme()
     return <div
         style={{
             backgroundSize: 'stretch',

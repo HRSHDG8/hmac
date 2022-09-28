@@ -2,7 +2,7 @@ import {Typography} from "@mui/material";
 import {defaultErrorHandler, EquationEvaluate, EquationOptions} from 'react-equation'
 import {defaultFunctions, defaultVariables} from 'equation-resolver'
 import {useState} from "react";
-import {Margin, IntField, withSVGTheme} from './index'
+import {IntField, Margin, withSVGTheme} from './index'
 
 export const RxSignalStrength = withSVGTheme(() => {
     const [pt, setPt] = useState(100)

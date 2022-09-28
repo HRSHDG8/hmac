@@ -3,23 +3,12 @@ import {ThemeProvider} from "./context/ThemeProvider";
 // import {StarField} from "./components/StarField";
 // import {Portfolio} from "./components/Portfolio";
 // import {BitPlane} from "./bitplane";
-import {Signal, signalRoutes} from "./signal";
-import {createBrowserRouter as createRouter, RouterProvider} from 'react-router-dom'
+import {Signal} from "./signal";
+import {Route, Routes} from 'react-router-dom'
 import {CS696} from "./CS696";
 import {ThemeSwitch} from "./components/ThemeSwitch";
+import {PacketErrorRate, RxSignalStrength, UpperBound} from "./signal/components";
 
-const router = createRouter([
-    {
-        path: '/hmac',
-        element: <CS696/>,
-        children: [{
-            path: '/hmac/network-fundamentals',
-            element: <Signal/>,
-            children: signalRoutes
-        }]
-    }
-
-])
 
 function App() {
     return (
@@ -28,7 +17,17 @@ function App() {
             {/*    <Portfolio/>*/}
             {/*</StarField>*/}
             <>
-                <RouterProvider router={router}/>
+                {/*<RouterProvider router={router}/>*/}
+                <Routes>
+                    <Route path={'/hmac'} element={<CS696/>}>
+                        <Route path={'/hmac/network-fundamentals'} element={<Signal/>}>
+                            <Route path={'/hmac/network-fundamentals/rx-signal-strength'}
+                                   element={<RxSignalStrength/>}/>
+                            <Route path={'/hmac/network-fundamentals/theoretical-upper-bound'} element={<UpperBound/>}/>
+                            <Route path={'/hmac/network-fundamentals/packet-error-rate'} element={<PacketErrorRate/>}/>
+                        </Route>
+                    </Route>
+                </Routes>
                 <ThemeSwitch/>
             </>
         </ThemeProvider>

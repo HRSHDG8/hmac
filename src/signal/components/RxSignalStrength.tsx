@@ -2,13 +2,13 @@ import {Typography} from "@mui/material";
 import {defaultErrorHandler, EquationEvaluate, EquationOptions} from 'react-equation'
 import {defaultFunctions, defaultVariables} from 'equation-resolver'
 import {useState} from "react";
-import {IntField, Margin, withSVGTheme} from './index'
+import {FloatField, IntField, Margin, withSVGTheme} from './index'
 
 export const RxSignalStrength = withSVGTheme(() => {
     const [pt, setPt] = useState(100)
     const [gr, setGr] = useState(100000)
     const [gt, setGt] = useState(1000)
-    const [lambda, setLambda] = useState(2400000000)
+    const [lambda, setLambda] = useState(0.125)
     const [d, setD] = useState(384400000)
 
     return <>
@@ -51,9 +51,9 @@ export const RxSignalStrength = withSVGTheme(() => {
             />
         </Margin>
         <Margin>
-            <IntField
+            <FloatField
                 value={lambda}
-                onChange={setLambda} label="λ (in Hz)"
+                onChange={setLambda} label="λ"
             />
         </Margin>
         <Margin>

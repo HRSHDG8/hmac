@@ -41,7 +41,7 @@ const options = {
         },
         title: {
             display: true,
-            text: 'Reducing biterror rate with no of retries',
+            text: 'Reducing bit error rate (in %) with no of retries',
         },
     },
 };
@@ -57,8 +57,8 @@ export const PacketErrorRate = withSVGTheme(() => {
     const chartData: ChartData = {
         labels: base,
         datasets: [{
-            label: 'bit error rate with retries',
-            data: bitError
+            label: `bit error rate with ${mMax} retries`,
+            data: bitError.map(e=>e*100)
         }]
     }
     return <>

@@ -6,6 +6,7 @@ import {ThemeProvider} from "./context/ThemeProvider";
 import {Signal, signalRoutes} from "./signal";
 import {createBrowserRouter as createRouter, RouterProvider} from 'react-router-dom'
 import {CS696} from "./CS696";
+import {ThemeSwitch} from "./components/ThemeSwitch";
 
 const router = createRouter([
     {
@@ -26,8 +27,10 @@ function App() {
             {/*<StarField>*/}
             {/*    <Portfolio/>*/}
             {/*</StarField>*/}
-
-            <RouterProvider router={router}/>
+            <>
+                <RouterProvider router={router}/>
+                <ThemeSwitch/>
+            </>
         </ThemeProvider>
     );
 }

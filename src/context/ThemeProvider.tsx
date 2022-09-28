@@ -1,5 +1,5 @@
 import React, {createContext, FC, ReactElement, useCallback, useContext, useState,} from 'react'
-import {createTheme, ThemeProvider as MuiThemeProvider, useMediaQuery,} from '@mui/material'
+import {createTheme, Paper, styled, ThemeProvider as MuiThemeProvider, useMediaQuery,} from '@mui/material'
 
 export type Mode = 'light' | 'dark'
 
@@ -28,6 +28,13 @@ const dark = createTheme({
     },
 })
 
+const Content = styled(Paper)({
+    width: '100vw',
+    height: '100vh',
+    borderRadius: '0px',
+    overflowY: 'auto'
+})
+
 export const ThemeProvider: FC<{ children: ReactElement }> = ({children}) => {
     const baseTheme = useMediaQuery('(prefers-color-scheme: dark)')
         ? 'dark'
@@ -50,7 +57,9 @@ export const ThemeProvider: FC<{ children: ReactElement }> = ({children}) => {
             }}
         >
             <MuiThemeProvider theme={isLight ? light : dark}>
-                {children}
+                <Content>
+                    {children}
+                </Content>
             </MuiThemeProvider>
         </ThemeContext.Provider>
     )

@@ -43,6 +43,7 @@ class StarfieldAnimation extends PureComponent {
             depth,
             size,
             style,
+            isLight,
             ...rest
         } = this.props
 
@@ -115,9 +116,10 @@ class StarfieldAnimation extends PureComponent {
         const {
             numParticles,
             depth,
-            size
+            size,
+            isLight
         } = props
-
+        console.log("This is :: ", isLight)
         this._particles = []
 
         const vp = {
@@ -136,7 +138,7 @@ class StarfieldAnimation extends PureComponent {
         }
 
         for (let i = 0; i < numParticles; ++i) {
-            this._particles.push(new Particle(this._bounds))
+            this._particles.push(new Particle(this._bounds, isLight))
         }
     }
 }

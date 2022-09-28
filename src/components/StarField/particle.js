@@ -3,12 +3,13 @@
  */
 
 export default class Particle {
-    constructor(bounds) {
+    constructor(bounds, isLight) {
         this._bounds = bounds
-        this.reset(true)
+        this.reset(true, isLight)
     }
 
-    reset(init = false) {
+    reset(init, isLight) {
+        this.isLight = isLight
         this.z = init ? random(0, this._bounds.z.max) : this._bounds.z.max
         const depth = (this._bounds.depth / (this._bounds.depth + this.z))
 
@@ -30,7 +31,7 @@ export default class Particle {
         this.osx = this.sx
         this.osy = this.sy
         this.hue = random(120, 200)
-        this.lightness = random(70, 100)
+        this.lightness = !isLight ? random(70, 100) : random(10, 20)
         this.alpha = 0
     }
 
@@ -50,7 +51,7 @@ export default class Particle {
             this.sy + this.sr < this._bounds.y.min ||
             this.z < this._bounds.z.min
         ) {
-            this.reset()
+            this.reset(false, this.isLight)
         }
 
         this.ox = this.x
